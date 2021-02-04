@@ -11,6 +11,11 @@ function playSound(event){
     setTimeout(() => { myAudio.play(); }, 100);
 }
 
+function resetText(){
+    textFit(document.getElementsByClassName('objBanner'), {alignHoriz: true, alignVert: true});
+    textFit(document.getElementsByClassName("objBanner"));
+}
+
 function setAspectRatio() {
     var img = new Image();
     img.src = getComputedStyle(document.documentElement).getPropertyValue('--image');
@@ -25,8 +30,7 @@ function setAspectRatio() {
     }
 }
 
-setAspectRatio();
-
+/*
 document.getElementById("loc1").addEventListener('click', playSound);
 document.getElementById("loc2").addEventListener('click', playSound);
 document.getElementById("loc3").addEventListener('click', playSound);
@@ -39,3 +43,15 @@ document.getElementById("loc9").addEventListener('click', playSound);
 document.getElementById("loc10").addEventListener('click', playSound);
 document.getElementById("loc11").addEventListener('click', playSound);
 document.getElementById("loc12").addEventListener('click', playSound);
+*/
+
+// Adjust the sizes of some stuff to make it look nice.
+setAspectRatio();
+resetText();
+
+var elements = document.getElementsByClassName("location");
+for (var i = 0; i < elements.length; i++) {
+    elements[i].addEventListener('click', playSound);
+}
+
+window.addEventListener('resize', resetText);

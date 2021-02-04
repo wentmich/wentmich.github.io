@@ -5,6 +5,7 @@
     --white: #ffffff;
     --black: #000000;
     --locBtnColor: none;
+    --fontsize: auto;
 }
 
 *{
@@ -40,34 +41,80 @@ body{
 /* add image for the current level */
 .lvlImg{
     position: relative;
-    width: 90vw;
-    height: calc(90vw * var(--aspectRatio));
+    width: 70vw;
+    height: calc(70vw * var(--aspectRatio));
     top: 15vh;
     left: 50vw;
-    margin: 0 0 0 -45vw;
+    margin: 0 0 0 -35vw;
 
     background-image: url("../images/theater.png");
     background-size: 100% auto;
     background-repeat: no-repeat;
 }
 
+/* add list of objects */
+.objBanner{
+  position: absolute;
+  box-sizing: border-box;
+  left: 50%;
+  top: 90%;
+  height: 10%;
+  width: 90%;
+  margin: 0 0 0 -45%;
+
+  background-image: url("../images/parchment.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.objList{
+  position: absolute;
+  height: 90%;
+  width: 90%;
+  left: 50%;
+  top: 50%;
+  margin: -45% 0 0 -45%;
+}
+
+#ispy{
+  color: var(--black);
+}
+
 /* add buttons for each object in the level.
 These will be positioned relative to the level image. */
+
+.location{
+  border-radius: 100%;
+  border: none;
+  background-color: var(--locBtnColor);
+}
+
 #loc1 {
     position: absolute;
 
+    /* position button */
     left: 23.387096774193548%;
     top: 65.57377049180327%;
     height: 7%;
     width: 4.6%;
 
+    /* color button */
     border-radius: 100%;
     border: none;
     background-color: var(--locBtnColor);
 
+    /* object attributes */
+    --name:stopSign;
     --sound:../sounds/theater/stop-sign.mp3;
+    --number:2;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc1:focus { outline-style: none; }
+
+  #stopSign{
+    color: var(--black);
+  }
 
   #loc2 {
     position: absolute;
@@ -81,7 +128,11 @@ These will be positioned relative to the level image. */
     border: none;
     background-color: var(--locBtnColor);
 
+    --name:stopSign;
     --sound:../sounds/theater/stop-sign.mp3;
+    --number:2;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc2:focus { outline-style: none; }
 
@@ -97,9 +148,17 @@ These will be positioned relative to the level image. */
     border: none;
     background-color: var(--locBtnColor);
 
+    --name:lamp;
     --sound:../sounds/theater/street-lamp.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc3:focus { outline-style: none; }
+
+  #lamp{
+    color: var(--black);
+  }
 
   #loc4 {
     position: absolute;
@@ -113,9 +172,17 @@ These will be positioned relative to the level image. */
     border: none;
     background-color: var(--locBtnColor);
 
+    --name:P;
     --sound:../sounds/theater/big-p.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc4:focus { outline-style: none; }
+
+  #P{
+    color: var(--black);
+  }
 
   #loc5 {
     position: absolute;
@@ -129,9 +196,17 @@ These will be positioned relative to the level image. */
     border: none;
     background-color: var(--locBtnColor);
     
+    --name:clock;
     --sound:../sounds/theater/clock.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc5:focus { outline-style: none; }
+
+  #clock{
+    color: var(--black);
+  }
 
   #loc6 {
     position: absolute;
@@ -145,9 +220,17 @@ These will be positioned relative to the level image. */
     border: none;
     background-color: var(--locBtnColor);
 
+    --name:E;
     --sound:../sounds/theater/broken-E.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc6:focus { outline-style: none; }
+
+  #E{
+    color: var(--black);
+  }
 
   #loc7 {
     position: absolute;
@@ -161,9 +244,17 @@ These will be positioned relative to the level image. */
     border: none;
     background-color: var(--locBtnColor);
 
+    --name:state;
     --sound:../sounds/theater/one-state.mp3;
+    --number:2;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc7:focus { outline-style: none; }
+
+  #state{
+    color: var(--black);
+  }
 
   #loc8 {
     position: absolute;
@@ -177,7 +268,11 @@ These will be positioned relative to the level image. */
     border: none;
     background-color: var(--locBtnColor);
 
+    --name:state;
     --sound:../sounds/theater/one-state.mp3;
+    --number:2;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc8:focus { outline-style: none; }
 
@@ -193,9 +288,17 @@ These will be positioned relative to the level image. */
     border: none;
     background-color: var(--locBtnColor);
 
+    --name:ladder;
     --sound:../sounds/theater/ladder.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc9:focus { outline-style: none; }
+
+  #ladder{
+    color: var(--black);
+  }
 
   #loc10 {
     position: absolute;
@@ -209,9 +312,17 @@ These will be positioned relative to the level image. */
     border: none;
     background-color: var(--locBtnColor);
 
+    --name:man;
     --sound:../sounds/theater/man.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc10:focus { outline-style: none; }
+
+  #man{
+    color: var(--black);
+  }
 
   #loc11 {
     position: absolute;
@@ -225,9 +336,17 @@ These will be positioned relative to the level image. */
     border: none;
     background-color: var(--locBtnColor);
 
+    --name:car;
     --sound:../sounds/theater/car-towed.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc11:focus { outline-style: none; }
+
+  #car{
+    color: var(--black);
+  }
 
   #loc12 {
     position: absolute;
@@ -241,11 +360,24 @@ These will be positioned relative to the level image. */
     border: none;
     background-color: var(--locBtnColor);
 
+    --name:bread;
     --sound:../sounds/theater/french-bread.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
   }
   #loc12:focus { outline-style: none; }
 
+  #bread{
+    color: var(--black);
+  }
+
 .blankSpace{
-    position: fixed;
-    margin-bottom: 5vh;
+    position: relative;
+    left: 0;
+    top: 5vh;
+    height: 5vh;
+    width: 100vw;
+    background-color: none;
+    border: none;
 }
