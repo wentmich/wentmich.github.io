@@ -12,17 +12,20 @@ function findObj(event){
 
     // get object properties
     var name = getComputedStyle(document.getElementById(myId)).getPropertyValue('--name');
-    var number = getComputedStyle(document.getElementById(myId)).getPropertyValue('--number');
-    var found = getComputedStyle(document.getElementById(myId)).getPropertyValue('--found');
+    var NObjs = parseInt( getComputedStyle(document.getElementById(myId)).getPropertyValue('--number') );
+    var found = parseInt( getComputedStyle(document.getElementById(myId)).getPropertyValue('--found') );
+    var number = parseInt( getComputedStyle(document.getElementById(name)).getPropertyValue('--number') );
+    console.log(name + ' ' + NObjs + ' ' + found + ' ' + number);
 
     // update found status
-    document.getElementById(myId).style.setProperty('--found', found + 1);
-
-    // update color
-    //getComputedStyle(document.getElementById(myId)).setProperty('--color', 'lightblue');
-    document.getElementById(name).style.setProperty('font-weight', 'bolder');
-
-
+    if (found == 0){
+        document.getElementById(myId).style.setProperty('--found', 1);
+        document.getElementById(name).style.setProperty('--number', parseInt(number + 1));
+        console.log('Made it in')
+        if (parseInt(number + 1) >= NObjs){
+            document.getElementById(name).style.setProperty('color', 'var(--green)');
+        }
+    }
 }
 
 function resetText(){
@@ -43,21 +46,6 @@ function setAspectRatio() {
         document.documentElement.style.setProperty('--aspectRatio', aspectRatio);
     }
 }
-
-/*
-document.getElementById("loc1").addEventListener('click', playSound);
-document.getElementById("loc2").addEventListener('click', playSound);
-document.getElementById("loc3").addEventListener('click', playSound);
-document.getElementById("loc4").addEventListener('click', playSound);
-document.getElementById("loc5").addEventListener('click', playSound);
-document.getElementById("loc6").addEventListener('click', playSound);
-document.getElementById("loc7").addEventListener('click', playSound);
-document.getElementById("loc8").addEventListener('click', playSound);
-document.getElementById("loc9").addEventListener('click', playSound);
-document.getElementById("loc10").addEventListener('click', playSound);
-document.getElementById("loc11").addEventListener('click', playSound);
-document.getElementById("loc12").addEventListener('click', playSound);
-*/
 
 // Adjust the sizes of some stuff to make it look nice.
 setAspectRatio();

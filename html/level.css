@@ -112,6 +112,7 @@ These will be positioned relative to the level image. */
   #stopSign{
     color: var(--black);
     font-weight: normal;
+    --number:0;
   }
 
   #loc2 {
@@ -157,6 +158,7 @@ These will be positioned relative to the level image. */
   #lamp{
     color: var(--black);
     font-weight: normal;
+    --number:0;
   }
 
   #loc4 {
@@ -182,6 +184,7 @@ These will be positioned relative to the level image. */
   #P{
     color: var(--black);
     font-weight: normal;
+    --number: 0;
   }
 
   #loc5 {
@@ -207,6 +210,7 @@ These will be positioned relative to the level image. */
   #clock{
     color: var(--black);
     font-weight: normal;
+    --number: 0;
   }
 
   #loc6 {
@@ -232,6 +236,7 @@ These will be positioned relative to the level image. */
   #E{
     color: var(--black);
     font-weight: normal;
+    --number: 0;
   }
 
   #loc7 {
@@ -257,6 +262,7 @@ These will be positioned relative to the level image. */
   #state{
     color: var(--black);
     font-weight: normal;
+    --number: 0;
   }
 
   #loc8 {
@@ -302,6 +308,7 @@ These will be positioned relative to the level image. */
   #ladder{
     color: var(--black);
     font-weight: normal;
+    --number: 0;
   }
 
   #loc10 {
@@ -327,6 +334,7 @@ These will be positioned relative to the level image. */
   #man{
     color: var(--black);
     font-weight: normal;
+    --number: 0;
   }
 
   #loc11 {
@@ -352,6 +360,7 @@ These will be positioned relative to the level image. */
   #car{
     color: var(--black);
     font-weight: normal;
+    --number: 0;
   }
 
   #loc12 {
@@ -377,6 +386,7 @@ These will be positioned relative to the level image. */
   #bread{
     color: var(--black);
     font-weight: normal;
+    --number: 0;
   }
 
 .blankSpace{
