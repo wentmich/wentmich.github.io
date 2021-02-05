@@ -1,6 +1,6 @@
 'use strict'
 
-function playSound(event){
+function findObj(event){
     // play the bell sound for found objects
     var myAudio = new Audio('../sounds/click1.mp3');
     myAudio.play();
@@ -9,11 +9,25 @@ function playSound(event){
     var myId = event.target.id;
     myAudio = new Audio(getComputedStyle(document.getElementById(myId)).getPropertyValue('--sound'));
     setTimeout(() => { myAudio.play(); }, 100);
+
+    // get object properties
+    var name = getComputedStyle(document.getElementById(myId)).getPropertyValue('--name');
+    var number = getComputedStyle(document.getElementById(myId)).getPropertyValue('--number');
+    var found = getComputedStyle(document.getElementById(myId)).getPropertyValue('--found');
+
+    // update found status
+    document.getElementById(myId).style.setProperty('--found', found + 1);
+
+    // update color
+    //getComputedStyle(document.getElementById(myId)).setProperty('--color', 'lightblue');
+    document.getElementById(name).style.setProperty('font-weight', 'bolder');
+
+
 }
 
 function resetText(){
     textFit(document.getElementsByClassName('objBanner'), {alignHoriz: true, alignVert: true});
-    textFit(document.getElementsByClassName("objBanner"));
+    window.addEventListener('resize', resetText);
 }
 
 function setAspectRatio() {
@@ -51,7 +65,5 @@ resetText();
 
 var elements = document.getElementsByClassName("location");
 for (var i = 0; i < elements.length; i++) {
-    elements[i].addEventListener('click', playSound);
+    elements[i].addEventListener('click', findObj);
 }
-
-window.addEventListener('resize', resetText);

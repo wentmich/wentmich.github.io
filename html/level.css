@@ -13,6 +13,7 @@
     font-family: fantasy;
 }
 
+
 /* add background for entire page */
 body{
     background-image: url("../images/background.jpg");
@@ -60,6 +61,10 @@ body{
   top: 90%;
   height: 10%;
   width: 90%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 1%;
+  padding-right: 1%;
   margin: 0 0 0 -45%;
 
   background-image: url("../images/parchment.jpg");
@@ -67,17 +72,9 @@ body{
   background-repeat: no-repeat;
 }
 
-.objList{
-  position: absolute;
-  height: 90%;
-  width: 90%;
-  left: 50%;
-  top: 50%;
-  margin: -45% 0 0 -45%;
-}
-
 #ispy{
   color: var(--black);
+  font-weight: normal;
 }
 
 /* add buttons for each object in the level.
@@ -114,6 +111,7 @@ These will be positioned relative to the level image. */
 
   #stopSign{
     color: var(--black);
+    font-weight: normal;
   }
 
   #loc2 {
@@ -158,6 +156,7 @@ These will be positioned relative to the level image. */
 
   #lamp{
     color: var(--black);
+    font-weight: normal;
   }
 
   #loc4 {
@@ -182,6 +181,7 @@ These will be positioned relative to the level image. */
 
   #P{
     color: var(--black);
+    font-weight: normal;
   }
 
   #loc5 {
@@ -206,6 +206,7 @@ These will be positioned relative to the level image. */
 
   #clock{
     color: var(--black);
+    font-weight: normal;
   }
 
   #loc6 {
@@ -230,6 +231,7 @@ These will be positioned relative to the level image. */
 
   #E{
     color: var(--black);
+    font-weight: normal;
   }
 
   #loc7 {
@@ -254,6 +256,7 @@ These will be positioned relative to the level image. */
 
   #state{
     color: var(--black);
+    font-weight: normal;
   }
 
   #loc8 {
@@ -298,6 +301,7 @@ These will be positioned relative to the level image. */
 
   #ladder{
     color: var(--black);
+    font-weight: normal;
   }
 
   #loc10 {
@@ -322,6 +326,7 @@ These will be positioned relative to the level image. */
 
   #man{
     color: var(--black);
+    font-weight: normal;
   }
 
   #loc11 {
@@ -346,6 +351,7 @@ These will be positioned relative to the level image. */
 
   #car{
     color: var(--black);
+    font-weight: normal;
   }
 
   #loc12 {
@@ -370,6 +376,7 @@ These will be positioned relative to the level image. */
 
   #bread{
     color: var(--black);
+    font-weight: normal;
   }
 
 .blankSpace{
