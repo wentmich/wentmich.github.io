@@ -105,7 +105,7 @@ These will be positioned relative to the level image. */
 
     /* object attributes */
     --name:stopSign;
-    --sound:../sounds/theater/stop-sign.mp3;
+    --sound1:../sounds/theater/stop-sign.mp3;
     --sound2:../sounds/theater/stop-sign.mp3;
     --number:2;
     --found:0;
@@ -132,7 +132,8 @@ These will be positioned relative to the level image. */
     background-color: var(--locBtnColor);
 
     --name:stopSign;
-    --sound:../sounds/theater/stop-sign.mp3;
+    --sound1:../sounds/theater/stop-sign.mp3;
+    --sound2:../sounds/theater/stop-sign.mp3;
     --number:2;
     --found:0;
     --color: var(--unfound);
@@ -152,7 +153,7 @@ These will be positioned relative to the level image. */
     background-color: var(--locBtnColor);
 
     --name:lamp;
-    --sound:../sounds/theater/street-lamp.mp3;
+    --sound1:../sounds/theater/street-lamp.mp3;
     --number:1;
     --found:0;
     --color: var(--unfound);
@@ -178,7 +179,7 @@ These will be positioned relative to the level image. */
     background-color: var(--locBtnColor);
 
     --name:P;
-    --sound:../sounds/theater/big-p.mp3;
+    --sound1:../sounds/theater/big-p.mp3;
     --number:1;
     --found:0;
     --color: var(--unfound);
@@ -204,7 +205,7 @@ These will be positioned relative to the level image. */
     background-color: var(--locBtnColor);
     
     --name:clock;
-    --sound:../sounds/theater/clock.mp3;
+    --sound1:../sounds/theater/clock.mp3;
     --number:1;
     --found:0;
     --color: var(--unfound);
@@ -230,7 +231,7 @@ These will be positioned relative to the level image. */
     background-color: var(--locBtnColor);
 
     --name:E;
-    --sound:../sounds/theater/broken-E.mp3;
+    --sound1:../sounds/theater/broken-E.mp3;
     --number:1;
     --found:0;
     --color: var(--unfound);
@@ -304,7 +305,7 @@ These will be positioned relative to the level image. */
     background-color: var(--locBtnColor);
 
     --name:ladder;
-    --sound:../sounds/theater/ladder.mp3;
+    --sound1:../sounds/theater/ladder.mp3;
     --number:1;
     --found:0;
     --color: var(--unfound);
@@ -330,7 +331,7 @@ These will be positioned relative to the level image. */
     background-color: var(--locBtnColor);
 
     --name:man;
-    --sound:../sounds/theater/man.mp3;
+    --sound1:../sounds/theater/man.mp3;
     --number:1;
     --found:0;
     --color: var(--unfound);
@@ -356,7 +357,7 @@ These will be positioned relative to the level image. */
     background-color: var(--locBtnColor);
 
     --name:car;
-    --sound:../sounds/theater/car-towed.mp3;
+    --sound1:../sounds/theater/car-towed.mp3;
     --number:1;
     --found:0;
     --color: var(--unfound);
@@ -382,7 +383,7 @@ These will be positioned relative to the level image. */
     background-color: var(--locBtnColor);
 
     --name:bread;
-    --sound:../sounds/theater/french-bread.mp3;
+    --sound1:../sounds/theater/french-bread.mp3;
     --number:1;
     --found:0;
     --color: var(--unfound);
