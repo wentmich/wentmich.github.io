@@ -54,7 +54,7 @@ body{
 }
 
 /* add list of objects */
-.objBanner{
+#objBanner{
   position: absolute;
   box-sizing: border-box;
   left: 50%;
@@ -70,6 +70,9 @@ body{
   background-image: url("../images/parchment.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
+
+  --Ntot: 12;
+  --Nfound: 0;
 }
 
 #ispy{
@@ -103,6 +106,7 @@ These will be positioned relative to the level image. */
     /* object attributes */
     --name:stopSign;
     --sound:../sounds/theater/stop-sign.mp3;
+    --sound2:../sounds/theater/stop-sign.mp3;
     --number:2;
     --found:0;
     --color: var(--unfound);
@@ -252,7 +256,8 @@ These will be positioned relative to the level image. */
     background-color: var(--locBtnColor);
 
     --name:state;
-    --sound:../sounds/theater/one-state.mp3;
+    --sound1:../sounds/theater/one-state.mp3;
+    --sound2:../sounds/theater/two-states.mp3;
     --number:2;
     --found:0;
     --color: var(--unfound);
@@ -278,7 +283,8 @@ These will be positioned relative to the level image. */
     background-color: var(--locBtnColor);
 
     --name:state;
-    --sound:../sounds/theater/one-state.mp3;
+    --sound1:../sounds/theater/one-state.mp3;
+    --sound2:../sounds/theater/two-states.mp3;
     --number:2;
     --found:0;
     --color: var(--unfound);
