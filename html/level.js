@@ -86,6 +86,7 @@ function playBanner() {
 // Adjust the sizes of some stuff to make it look nice.
 setAspectRatio();
 resetText();
+textFit(document.getElementsByClassName('header'), {alignVert: true});
 
 var elements = document.getElementsByClassName("location");
 for (var i = 0; i < elements.length; i++) {

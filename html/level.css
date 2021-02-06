@@ -29,12 +29,12 @@ body{
     position: fixed;
     margin-top: 0%;
     margin-left: 0%;
-    width: 200vw;
+    width: 100vw;
     height: 8vh;
     left: 0;
     top: 0;
 
-    background-color: #EBD5B3;
+    background-color: #c4a67b;
 
     z-index: -1;
 }
