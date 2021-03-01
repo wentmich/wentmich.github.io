@@ -1,0 +1,414 @@
+:root{
+	--image:/Users/wentmich/Documents/codes/ispy.github.io/images/theater.png;
+	--aspectRatio: 1.0;
+	--green: #00FF00;
+	--white: #ffffff;
+	--black: #000000;
+	--locBtnColor: none;
+	--fontsize: auto;
+}
+
+*{
+	color: var(--fontColor);
+	font-family: fantasy;
+}
+
+/* add background for entire page */
+body{
+	background-image: url('../images/background.jpg');
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-attachment: fixed;
+	background-size: 100vw 100vh;
+}
+
+/* header for top of page */
+.header{
+	position: fixed;
+	margin-top: 0%;
+	margin-left: 0%;
+	width: 100vw;
+	height: 8vh;
+	left: 0;
+	top: 0;
+	background-color: #c4a67b;
+	z-index: -1;
+	}
+
+/* add image for the current level */
+	position: relative;
+	width: 70vw;
+	height: calc(70vw * var(--aspectRatio));
+	top: 15vh;
+	left: 50vw;
+	margin: 0 0 0 -35vw;
+	background-image: url('/Users/wentmich/Documents/codes/ispy.github.io/images/theater.png');
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+/* add list of objects */
+#objBanner{
+	position: absolute;
+	box-sizing: border-box;
+	left: 50%;
+	top: 90%;
+	height: 10%;
+	width: 90%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 1%;
+	padding-right: 1%;
+	margin: 0 0 0 -45%;
+	background-image: url('../images/parchment.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	--Ntot: 12;
+	--Nfound: 0;
+}
+
+#ispy{
+	color: var(--black);
+	font-weight: normal;
+}
+
+/* add buttons for each object in the level.
+These will be positioned relative to the level image. */
+.location{
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+}
+
+#loc1{
+	/* position button */
+	left:0.9215384615384615%;
+	top:0.5625%;
+	height:0.09%;
+	width:0.07461538461538461%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:stopSign;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc1:focus { outline-style: none; }
+
+
+#loc2{
+	/* position button */
+	left:0.2423076923076923%;
+	top:0.66125%;
+	height:0.03461538461538462%;
+	width:0.03307692307692308%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:stopSign;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc2:focus { outline-style: none; }
+
+
+#stopSign{
+	color: var(--black);
+	font-wight: normal;
+	--number:0;
+}
+
+
+.blankSpace{
+	position: relative;
+	left: 0;
+	top: 5vh;
+	height: 5vh;
+	width: 100vw;
+	background-color: none;
+	border: none;
+}
+:root{
+	--image:/Users/wentmich/Documents/codes/ispy.github.io/images/theater.png;
+	--aspectRatio: 1.0;
+	--green: #00FF00;
+	--white: #ffffff;
+	--black: #000000;
+	--locBtnColor: none;
+	--fontsize: auto;
+}
+
+*{
+	color: var(--fontColor);
+	font-family: fantasy;
+}
+
+/* add background for entire page */
+body{
+	background-image: url('../images/background.jpg');
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-attachment: fixed;
+	background-size: 100vw 100vh;
+}
+
+/* header for top of page */
+.header{
+	position: fixed;
+	margin-top: 0%;
+	margin-left: 0%;
+	width: 100vw;
+	height: 8vh;
+	left: 0;
+	top: 0;
+	background-color: #c4a67b;
+	z-index: -1;
+	}
+
+/* add image for the current level */
+	position: relative;
+	width: 70vw;
+	height: calc(70vw * var(--aspectRatio));
+	top: 15vh;
+	left: 50vw;
+	margin: 0 0 0 -35vw;
+	background-image: url('/Users/wentmich/Documents/codes/ispy.github.io/images/theater.png');
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+/* add list of objects */
+#objBanner{
+	position: absolute;
+	box-sizing: border-box;
+	left: 50%;
+	top: 90%;
+	height: 10%;
+	width: 90%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 1%;
+	padding-right: 1%;
+	margin: 0 0 0 -45%;
+	background-image: url('../images/parchment.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	--Ntot: 12;
+	--Nfound: 0;
+}
+
+#ispy{
+	color: var(--black);
+	font-weight: normal;
+}
+
+/* add buttons for each object in the level.
+These will be positioned relative to the level image. */
+.location{
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+}
+
+#loc1{
+	/* position button */
+	left:0.9207692307692308%;
+	top:0.5775%;
+	height:0.08%;
+	width:0.07538461538461538%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:stopSign;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc1:focus { outline-style: none; }
+
+
+#loc2{
+	/* position button */
+	left:0.23923076923076922%;
+	top:0.6575%;
+	height:0.04153846153846154%;
+	width:0.03769230769230769%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:stopSign;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc2:focus { outline-style: none; }
+
+
+#stopSign{
+	color: var(--black);
+	font-wight: normal;
+	--number:0;
+}
+
+
+.blankSpace{
+	position: relative;
+	left: 0;
+	top: 5vh;
+	height: 5vh;
+	width: 100vw;
+	background-color: none;
+	border: none;
+}
+:root{
+	--image:/Users/wentmich/Documents/codes/ispy.github.io/images/theater.png;
+	--aspectRatio: 1.0;
+	--green: #00FF00;
+	--white: #ffffff;
+	--black: #000000;
+	--locBtnColor: none;
+	--fontsize: auto;
+}
+
+*{
+	color: var(--fontColor);
+	font-family: fantasy;
+}
+
+/* add background for entire page */
+body{
+	background-image: url('../images/background.jpg');
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-attachment: fixed;
+	background-size: 100vw 100vh;
+}
+
+/* header for top of page */
+.header{
+	position: fixed;
+	margin-top: 0%;
+	margin-left: 0%;
+	width: 100vw;
+	height: 8vh;
+	left: 0;
+	top: 0;
+	background-color: #c4a67b;
+	z-index: -1;
+	}
+
+/* add image for the current level */
+	position: relative;
+	width: 70vw;
+	height: calc(70vw * var(--aspectRatio));
+	top: 15vh;
+	left: 50vw;
+	margin: 0 0 0 -35vw;
+	background-image: url('/Users/wentmich/Documents/codes/ispy.github.io/images/theater.png');
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+/* add list of objects */
+#objBanner{
+	position: absolute;
+	box-sizing: border-box;
+	left: 50%;
+	top: 90%;
+	height: 10%;
+	width: 90%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 1%;
+	padding-right: 1%;
+	margin: 0 0 0 -45%;
+	background-image: url('../images/parchment.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	--Ntot: 12;
+	--Nfound: 0;
+}
+
+#ispy{
+	color: var(--black);
+	font-weight: normal;
+}
+
+/* add buttons for each object in the level.
+These will be positioned relative to the level image. */
+.location{
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+}
+
+#loc1{
+	/* position button */
+	left:0.92%;
+	top:0.57375%;
+	height:0.08%;
+	width:0.07538461538461538%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:stopSign;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc1:focus { outline-style: none; }
+
+
+#loc2{
+	/* position button */
+	left:0.23846153846153847%;
+	top:0.65875%;
+	height:0.043076923076923075%;
+	width:0.03923076923076923%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:stopSign;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopSign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc2:focus { outline-style: none; }
+
+
+#stopSign{
+	color: var(--black);
+	font-wight: normal;
+	--number:0;
+}
+
+
+.blankSpace{
+	position: relative;
+	left: 0;
+	top: 5vh;
+	height: 5vh;
+	width: 100vw;
+	background-color: none;
+	border: none;
+}
