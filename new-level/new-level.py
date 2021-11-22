@@ -1,39 +1,59 @@
 ## package imports
 import pygame as pygame
 import numpy as np
+import sounddevice as sd
+from pydub import AudioSegment
+from scipy.io.wavfile import write
 ## end of package imports
 
 ## global variables
-HTML = "new-level.html"
-CSS  = "new-level.css"
-JS   = "new-level.js"
-IMAGE = "/Users/wentmich/Documents/codes/ispy.github.io/images/theater.png"
-LEVELNAME = "theater"
-LEVELPATH = "/User/wentmich/Documents/codes/ispy.github.io/" + LEVELNAME + "/"
+IMAGE = "/Users/wentmich/Documents/codes/ispy.github.io/images/book-store.png"
+LEVELNAME = input("What's your level name?: ")
+NTOT = int(input("How many total objects are there?: "))
+LEVELPATH = "" #"/User/wentmich/Documents/codes/ispy.github.io/" + LEVELNAME + "/"
+HTML = LEVELNAME + ".html"
+CSS = LEVELNAME + ".css"
+JS = LEVELNAME + ".js"
+FS = 44100
+SECONDS = 3.0
 
 ## define object class
 class newObject:
-    left = []
-    top = []
-    height = []
-    width = []
-    name = ''
-    sounds = []
-    NSites = 0
-    num = []
-    ispy_tag = ''
+    def __init__(self):
+        self.left = [] # location and dimensions of the button to be used to locate the object
+        self.top = []
+        self.height = []
+        self.width = []
+        self.name = '' # html id of the item (there is a confusing relabeling of name in the write_html_block() function, so be careful
+        self.sounds = [] # file location for the sounds to be played when the item is found
+        self.NSites = 0 # number of locations for the object (i.e. i spy two stop signs)
+        self.num = []
+        self.ispy_tag = '' # what appears in the object banner
 ## end of class
+
+def get_aspect_ratio():
+    myImg = pygame.image.load(IMAGE)
+    myWidth = myImg.get_width()
+    myHeight = myImg.get_height()
+
+    return str(myHeight/myWidth);
 
 ## get object traits
 def get_newObj_traits():
     # get name, number of sites, and sound files names
-    object = newObject()
-    object.name = input('Name of New Object: ')
-    object.NSites = int(input('Number of Sites in Object: '))
-    object.ispy_tag = input('I spy tag for this object: ')
-    for i in range(object.NSites):
-        object.num.append(i + 1)
-        object.sounds.append(LEVELPATH + "sounds/" + object.name + str(i) + ".mp3")
+    myobject = newObject()
+    myobject.left = []
+    myobject.top = []
+    myobject.height = []
+    myobject.width = []
+    myobject.sounds = []
+    myobject.num = []
+    myobject.name = input('Name of New Object: ')
+    myobject.NSites = int(input('Number of Sites in Object: '))
+    myobject.ispy_tag = input('I spy tag for this object: ')
+    for i in range(myobject.NSites):
+        myobject.num.append(i + 1)
+        myobject.sounds.append(LEVELPATH + "sounds/" + myobject.name + str(i) + ".mp3")
 
     # set mouse position list
     mouse_positions = []
@@ -62,18 +82,30 @@ def get_newObj_traits():
             if event.type == pygame.MOUSEBUTTONUP:
                 mouse = pygame.mouse.get_pos()
                 mouse_positions.append(mouse)
-                print('in here')
 
         pygame.display.update()
         clock.tick(60)
 
-    for i in range(object.NSites):
-        object.left.append(mouse_positions[-2*(i+1)][0] / display_width)
-        object.top.append(mouse_positions[-2*(i+1)][1] / display_height)
-        object.width.append(abs(mouse_positions[-2*(i+1) + 1][0] - mouse_positions[-2*(i+1)][0]) / display_width)
-        object.height.append(abs(mouse_positions[-2*(i+1) + 1][1] - mouse_positions[-2*(i+1)][1]) / display_width)
+    for i in range(myobject.NSites):
+        myobject.left.append(mouse_positions[-2*(i+1)][0]*100 / display_width)
+        myobject.top.append(mouse_positions[-2*(i+1)][1]*100 / display_height)
+        myobject.width.append(abs(mouse_positions[-2*(i+1) + 1][0] - mouse_positions[-2*(i+1)][0])*100 / display_width)
+        myobject.height.append(abs(mouse_positions[-2*(i+1) + 1][1] - mouse_positions[-2*(i+1)][1])*100 / display_width)
+    
+    for i in range(myobject.NSites):
+        pygame.mixer.init()
+        pygame.mixer.music.load('/Users/wentmich/Documents/codes/ispy.github.io/sounds/bell.mp3')
+        pygame.mixer.music.play()
 
-    return object;
+        myrecording = sd.rec(int(SECONDS * FS), samplerate=FS, channels=1)
+        sd.wait()  # Wait until recording is finished
+        write(myobject.name + str(i) + '.wav', FS, myrecording)
+        
+        mysound = AudioSegment.from_wav(myobject.name + str(i) + '.wav')
+        mysound.export(myobject.name + str(i) + '.mp3', format='mp3') # Save as mp3 file
+
+
+    return myobject;
 ## end of function
 
 ## get all of the objects into a list
@@ -93,6 +125,7 @@ def get_obj_pos_print_css_block(object, n):
     for i in range(object.NSites):
         pos_str += ("#loc" + str(object.num[i] + n) + "{\n" + \
                    "\t/* position button */\n" + \
+                   "\tposition: absolute;\n" + \
                    "\tleft:" + str(object.left[i]) + "%;\n" + \
                    "\ttop:" + str(object.top[i]) + "%;\n" + \
                    "\theight:" + str(object.height[i]) + "%;\n" + \
@@ -113,7 +146,7 @@ def get_obj_pos_print_css_block(object, n):
                     "}\n" + \
                     "#loc" + str(object.num[i] + n) + ":focus { outline-style: none; }\n\n\n")
 
-    pos_str += ("#" + object.name + "{\n" + \
+    pos_str += ("#" + object.name.replace(" ","_").replace("'","_") + "{\n" + \
                 "\tcolor: var(--black);\n" + \
                 "\tfont-weight: normal;\n" + \
                 "\t--number:0;\n" + \
@@ -126,7 +159,7 @@ def get_obj_pos_print_css_block(object, n):
 def write_css_file(levelObjects):
     css_str = (":root{\n" + \
                "\t--image:" + IMAGE + ";\n" + \
-               "\t--aspectRatio: 1.0;\n" + \
+               "\t--aspectRatio: " + get_aspect_ratio() + ";\n" + \
                "\t--green: #00FF00;\n" + \
                "\t--white: #ffffff;\n" + \
                "\t--black: #000000;\n" + \
@@ -139,7 +172,7 @@ def write_css_file(levelObjects):
                "}\n\n" + \
                "/* add background for entire page */\n" + \
                "body{\n" + \
-               "\tbackground-image: url('../images/background.jpg');\n" +
+               "\tbackground-image: url('/Users/wentmich/Documents/codes/ispy.github.io/images/background.jpg');\n" +
                "\tbackground-repeat: no-repeat;\n" + \
                "\tbackground-position: left top;\n" + \
                "\tbackground-attachment: fixed;\n" + \
@@ -161,6 +194,7 @@ def write_css_file(levelObjects):
                "\t}\n\n" + \
 
                "/* add image for the current level */\n" + \
+               ".lvlImg{" + \
                "\tposition: relative;\n" + \
                "\twidth: 70vw;\n" + \
                "\theight: calc(70vw * var(--aspectRatio));\n" + \
@@ -191,7 +225,7 @@ def write_css_file(levelObjects):
                "\tbackground-size: 100% 100%;\n" + \
                "\tbackground-repeat: no-repeat;\n" + \
 
-               "\t--Ntot: 12;\n" + \
+               "\t--Ntot: " + str(NTOT) + ";\n" + \
                "\t--Nfound: 0;\n" + \
                "}\n\n" + \
 
@@ -235,7 +269,7 @@ def write_html_file(levelObjects):
                 "\t<meta charset='UTF-8'>\n" + \
                 "\t<meta name='viewport' content='width=device-width, initial-scale=1.0'>\n" + \
                 "\t<title>Main Street</title>\n" + \
-                "\t<link rel='stylesheet' href='level.css'>\n" + \
+                "\t<link rel='stylesheet' href='" + str(LEVELNAME) + ".css'>\n" + \
                 "\t<link rel='stylesheet' href='../main.css'>\n" + \
                 "</head>\n" + \
                 "<body>\n" + \
@@ -253,10 +287,13 @@ def write_html_file(levelObjects):
                 "\t\t<!-- set of buttons for each object -->\n")
 
     NList = len(levelObjects)
+    print("Length of NList = " + str(NList))
+    currentNumberWritten = 0
 
     for i in range(NList):
-        for j in range(len(levelObjects[i].num)):
-            html_str += "\t\t<button id='loc" + str(int(i + 1 + levelObjects[i].num[j])) + "' class='location'></button>\n"
+        for j in range(levelObjects[i].NSites):
+            html_str += "\t\t<button id='loc" + str(int(currentNumberWritten + 1)) + "' class='location'></button>\n"
+            currentNumberWritten += 1
 
     html_str += ("\n" + \
                 "\t\t<!-- add the object list -->\n" + \
@@ -353,7 +390,7 @@ def write_javascript_file():
             "\t\tvar width = img.width;\n" + \
             "\t\tvar height = img.height;\n" + \
             "\t\tvar aspectRatio = height / width;\n" + \
-            "\t\tconsole.log('Aspect Ratio: '' + aspectRatio)\n" + \
+            "\t\tconsole.log('Aspect Ratio: ' + aspectRatio)\n" + \
 
             "\t\tdocument.documentElement.style.setProperty('--aspectRatio', aspectRatio);\n" + \
             "\t}\n" + \
