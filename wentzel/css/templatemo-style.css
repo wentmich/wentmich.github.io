@@ -11,6 +11,13 @@ html, body, .page-container {
 }
 
 body {
+    background-image: url("./img/background.jpeg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: static;
+
+    background-size: 100vw 100vh;
+
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 19px;
     font-weight: 300;
