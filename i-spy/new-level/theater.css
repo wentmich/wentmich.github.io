@@ -1,0 +1,414 @@
+:root{
+	--image:/Users/wentmich/Documents/codes/ispy.github.io/images/theater.png;
+	--aspectRatio: 1.0;
+	--green: #00FF00;
+	--white: #ffffff;
+	--black: #000000;
+	--locBtnColor: none;
+	--fontsize: auto;
+}
+
+*{
+	color: var(--fontColor);
+	font-family: fantasy;
+}
+
+/* add background for entire page */
+body{
+	background-image: url('../images/background.jpg');
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-attachment: fixed;
+	background-size: 100vw 100vh;
+}
+
+/* header for top of page */
+.header{
+	position: fixed;
+	margin-top: 0%;
+	margin-left: 0%;
+	width: 100vw;
+	height: 8vh;
+	left: 0;
+	top: 0;
+	background-color: #c4a67b;
+	z-index: -1;
+	}
+
+/* add image for the current level */
+	position: relative;
+	width: 70vw;
+	height: calc(70vw * var(--aspectRatio));
+	top: 15vh;
+	left: 50vw;
+	margin: 0 0 0 -35vw;
+	background-image: url('/Users/wentmich/Documents/codes/ispy.github.io/images/theater.png');
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+/* add list of objects */
+#objBanner{
+	position: absolute;
+	box-sizing: border-box;
+	left: 50%;
+	top: 90%;
+	height: 10%;
+	width: 90%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 1%;
+	padding-right: 1%;
+	margin: 0 0 0 -45%;
+	background-image: url('../images/parchment.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	--Ntot: 12;
+	--Nfound: 0;
+}
+
+#ispy{
+	color: var(--black);
+	font-weight: normal;
+}
+
+/* add buttons for each object in the level.
+These will be positioned relative to the level image. */
+.location{
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+}
+
+#loc1{
+	/* position button */
+	left:0.9207692307692308%;
+	top:0.56625%;
+	height:0.08307692307692308%;
+	width:0.07615384615384616%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:stopsign;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc1:focus { outline-style: none; }
+
+
+#loc2{
+	/* position button */
+	left:0.23923076923076922%;
+	top:0.655%;
+	height:0.043076923076923075%;
+	width:0.040769230769230766%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:stopsign;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc2:focus { outline-style: none; }
+
+
+#stopsign{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc2{
+	/* position button */
+	left:0.9207692307692308%;
+	top:0.56625%;
+	height:0.08307692307692308%;
+	width:0.07615384615384616%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:lamp;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc2:focus { outline-style: none; }
+
+
+#loc3{
+	/* position button */
+	left:0.23923076923076922%;
+	top:0.655%;
+	height:0.043076923076923075%;
+	width:0.040769230769230766%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:lamp;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc3:focus { outline-style: none; }
+
+
+#lamp{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc3{
+	/* position button */
+	left:0.9207692307692308%;
+	top:0.56625%;
+	height:0.08307692307692308%;
+	width:0.07615384615384616%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:p;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc3:focus { outline-style: none; }
+
+
+#p{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc4{
+	/* position button */
+	left:0.9207692307692308%;
+	top:0.56625%;
+	height:0.08307692307692308%;
+	width:0.07615384615384616%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:clock;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc4:focus { outline-style: none; }
+
+
+#clock{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc5{
+	/* position button */
+	left:0.9207692307692308%;
+	top:0.56625%;
+	height:0.08307692307692308%;
+	width:0.07615384615384616%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:e;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc5:focus { outline-style: none; }
+
+
+#e{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc6{
+	/* position button */
+	left:0.9207692307692308%;
+	top:0.56625%;
+	height:0.08307692307692308%;
+	width:0.07615384615384616%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:state;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc6:focus { outline-style: none; }
+
+
+#loc7{
+	/* position button */
+	left:0.23923076923076922%;
+	top:0.655%;
+	height:0.043076923076923075%;
+	width:0.040769230769230766%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:state;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--sound2:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc7:focus { outline-style: none; }
+
+
+#state{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc7{
+	/* position button */
+	left:0.9207692307692308%;
+	top:0.56625%;
+	height:0.08307692307692308%;
+	width:0.07615384615384616%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:ladder;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc7:focus { outline-style: none; }
+
+
+#ladder{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc8{
+	/* position button */
+	left:0.9207692307692308%;
+	top:0.56625%;
+	height:0.08307692307692308%;
+	width:0.07615384615384616%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:man;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc8:focus { outline-style: none; }
+
+
+#man{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc9{
+	/* position button */
+	left:0.9207692307692308%;
+	top:0.56625%;
+	height:0.08307692307692308%;
+	width:0.07615384615384616%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:car;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc9:focus { outline-style: none; }
+
+
+#car{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc10{
+	/* position button */
+	left:0.9207692307692308%;
+	top:0.56625%;
+	height:0.08307692307692308%;
+	width:0.07615384615384616%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:bread;
+	--sound1:/User/wentmich/Documents/codes/ispy.github.io/theater/sounds/stopsign0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc10:focus { outline-style: none; }
+
+
+#bread{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+.blankSpace{
+	position: relative;
+	left: 0;
+	top: 5vh;
+	height: 5vh;
+	width: 100vw;
+	background-color: none;
+	border: none;
+}

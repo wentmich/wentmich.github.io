@@ -1,0 +1,407 @@
+:root{
+    --image:../images/theater.png;
+    --aspectRatio: 1.0;
+    --green: #00FF00;
+    --white: #ffffff;
+    --black: #000000;
+    --locBtnColor: none;
+    --fontsize: auto;
+}
+
+*{
+    color: var(--fontColor);
+    font-family: fantasy;
+}
+
+
+/* add background for entire page */
+body{
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-position: left top;
+    background-attachment: fixed;
+
+    background-size: 100vw 100vh;
+}
+
+/* header for top of page */
+.header{
+    position: fixed;
+    margin-top: 0%;
+    margin-left: 0%;
+    width: 100vw;
+    height: 8vh;
+    left: 0;
+    top: 0;
+
+    background-color: #c4a67b;
+
+    z-index: -1;
+}
+
+/* add image for the current level */
+.lvlImg{
+    position: relative;
+    width: 70vw;
+    height: calc(70vw * var(--aspectRatio));
+    top: 15vh;
+    left: 50vw;
+    margin: 0 0 0 -35vw;
+
+    background-image: url("../images/theater.png");
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+}
+
+/* add list of objects */
+#objBanner{
+  position: absolute;
+  box-sizing: border-box;
+  left: 50%;
+  top: 90%;
+  height: 10%;
+  width: 90%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  padding-left: 1%;
+  padding-right: 1%;
+  margin: 0 0 0 -45%;
+
+  background-image: url("../images/parchment.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  --Ntot: 12;
+  --Nfound: 0;
+}
+
+#ispy{
+  color: var(--black);
+  font-weight: normal;
+}
+
+/* add buttons for each object in the level.
+These will be positioned relative to the level image. */
+
+.location{
+  border-radius: 100%;
+  border: none;
+  background-color: var(--locBtnColor);
+}
+
+#loc1 {
+    position: absolute;
+
+    /* position button */
+    left: 23.387096774193548%;
+    top: 65.57377049180327%;
+    height: 7%;
+    width: 4.6%;
+
+    /* color button */
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+
+    /* object attributes */
+    --name:stopSign;
+    --sound1:../sounds/theater/stop-sign.mp3;
+    --sound2:../sounds/theater/stop-sign.mp3;
+    --number:2;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc1:focus { outline-style: none; }
+
+  #stopSign{
+    color: var(--black);
+    font-weight: normal;
+    --number:0;
+  }
+
+  #loc2 {
+    position: absolute;
+
+    left: 91.27459366980325%;
+    top: 56.87263556116015%;
+    height: 15%;
+    width: 8.7%;
+
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+
+    --name:stopSign;
+    --sound1:../sounds/theater/stop-sign.mp3;
+    --sound2:../sounds/theater/stop-sign.mp3;
+    --number:2;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc2:focus { outline-style: none; }
+
+  #loc3 {
+    position: absolute;
+
+    left: 92.21556886227545%;
+    top: 30.012610340479192%;
+    height: 9.8%;
+    width: 7%;
+
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+
+    --name:lamp;
+    --sound1:../sounds/theater/street-lamp.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc3:focus { outline-style: none; }
+
+  #lamp{
+    color: var(--black);
+    font-weight: normal;
+    --number:0;
+  }
+
+  #loc4 {
+    position: absolute;
+
+    left: 61.865189289012%;
+	  top: 47.03656998738966%;
+    height: 13%;
+    width: 8.8%;
+
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+
+    --name:P;
+    --sound1:../sounds/theater/big-p.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc4:focus { outline-style: none; }
+
+  #P{
+    color: var(--black);
+    font-weight: normal;
+    --number: 0;
+  }
+
+  #loc5 {
+    position: absolute;
+
+    left: 90.58171745152355%;
+	  top: 12.610340479192939%;
+    height: 6.6%;
+    width: 5%;
+
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+    
+    --name:clock;
+    --sound1:../sounds/theater/clock.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc5:focus { outline-style: none; }
+
+  #clock{
+    color: var(--black);
+    font-weight: normal;
+    --number: 0;
+  }
+
+  #loc6 {
+    position: absolute;
+
+    left: 83.19482917820868%;
+	  top: 59.14249684741488%;
+    height: 4.2%;
+    width: 2%;
+
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+
+    --name:E;
+    --sound1:../sounds/theater/broken-E.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc6:focus { outline-style: none; }
+
+  #E{
+    color: var(--black);
+    font-weight: normal;
+    --number: 0;
+  }
+
+  #loc7 {
+    position: absolute;
+
+    left: 18.282548476454295%;
+	  top: 0.25220680958385877%;
+    height: 51.5%;
+    width: 4.4%;
+
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+
+    --name:state;
+    --sound1:../sounds/theater/one-state.mp3;
+    --sound2:../sounds/theater/two-states.mp3;
+    --number:2;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc7:focus { outline-style: none; }
+
+  #state{
+    color: var(--black);
+    font-weight: normal;
+    --number: 0;
+  }
+
+  #loc8 {
+    position: absolute;
+
+    left: 82.7331486611265%;
+	  top: 35.939470365699876%;
+    height: 22.7%;
+    width: 2.8%;
+
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+
+    --name:state;
+    --sound1:../sounds/theater/one-state.mp3;
+    --sound2:../sounds/theater/two-states.mp3;
+    --number:2;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc8:focus { outline-style: none; }
+
+  #loc9 {
+    position: absolute;
+
+    left: 39.61218836565097%;
+	  top: 24.08575031525851%;
+    height: 11.8%;
+    width: 2.5%;
+
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+
+    --name:ladder;
+    --sound1:../sounds/theater/ladder.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc9:focus { outline-style: none; }
+
+  #ladder{
+    color: var(--black);
+    font-weight: normal;
+    --number: 0;
+  }
+
+  #loc10 {
+    position: absolute;
+
+    left: 29.17820867959372%;
+	  top: 81.9672131147541%;
+    height: 7.3%;
+    width: 2.3%;
+
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+
+    --name:man;
+    --sound1:../sounds/theater/man.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc10:focus { outline-style: none; }
+
+  #man{
+    color: var(--black);
+    font-weight: normal;
+    --number: 0;
+  }
+
+  #loc11 {
+    position: absolute;
+
+    left: 78.02400738688827%;
+	  top: 65.32156368221942%;
+    height: 3.1%;
+    width: 3.4%;
+
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+
+    --name:car;
+    --sound1:../sounds/theater/car-towed.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc11:focus { outline-style: none; }
+
+  #car{
+    color: var(--black);
+    font-weight: normal;
+    --number: 0;
+  }
+
+  #loc12 {
+    position: absolute;
+
+    left: 28.71652816251154%;
+	  top: 48.423707440100884%;
+    height: 11.1%;
+    width: 1.1%;
+
+    border-radius: 100%;
+    border: none;
+    background-color: var(--locBtnColor);
+
+    --name:bread;
+    --sound1:../sounds/theater/french-bread.mp3;
+    --number:1;
+    --found:0;
+    --color: var(--unfound);
+  }
+  #loc12:focus { outline-style: none; }
+
+  #bread{
+    color: var(--black);
+    font-weight: normal;
+    --number: 0;
+  }
+
+.blankSpace{
+    position: relative;
+    left: 0;
+    top: 5vh;
+    height: 5vh;
+    width: 100vw;
+    background-color: none;
+    border: none;
+}

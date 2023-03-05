@@ -1,0 +1,12 @@
+- Make sure that each object is being indexed to the correct location index
+- Fix the for loop that makes the object banner so that it will include all objects
+- Make the percentages percentages rather than fractions with percent signs
+- all objects are getting the same potition, figure out why and fix it
+- the problem is that the myobject variable isn't being fully cleared for some reason. Not sure why. It needs to clear completely.
+
+PROBLEMS WITH HTML:
+- too many position buttons being written for some reason. Mess with for loop in python file
+- make quotation marks for strings double instead of single
+
+PROBLEMS WITH CSS:
+- spaces and apostrophes in the names objects are causing problems with the naming of objects in the css files

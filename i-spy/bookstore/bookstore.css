@@ -1,0 +1,329 @@
+:root{
+	--image:/Users/wentmich/Documents/codes/ispy.github.io/images/book-store.png;
+	--aspectRatio: 0.6738768718801996;
+	--green: #00FF00;
+	--white: #ffffff;
+	--black: #000000;
+	--locBtnColor: #000000;
+	--fontsize: auto;
+}
+
+*{
+	color: var(--fontColor);
+	font-family: fantasy;
+}
+
+/* add background for entire page */
+body{
+	background-image: url('/Users/wentmich/Documents/codes/ispy.github.io/images/background.jpg');
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-attachment: fixed;
+	background-size: 100vw 100vh;
+}
+
+/* header for top of page */
+.header{
+	position: fixed;
+	margin-top: 0%;
+	margin-left: 0%;
+	width: 100vw;
+	height: 8vh;
+	left: 0;
+	top: 0;
+	background-color: #c4a67b;
+	z-index: -1;
+	}
+
+/* add image for the current level */
+.lvlImg{	position: relative;
+	width: 70vw;
+	height: calc(70vw * var(--aspectRatio));
+	top: 15vh;
+	left: 50vw;
+	margin: 0 0 0 -35vw;
+	background-image: url('/Users/wentmich/Documents/codes/ispy.github.io/images/book-store.png');
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+/* add list of objects */
+#objBanner{
+	position: absolute;
+	box-sizing: border-box;
+	left: 50%;
+	top: 90%;
+	height: 10%;
+	width: 90%;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	padding-left: 1%;
+	padding-right: 1%;
+	margin: 0 0 0 -45%;
+	background-image: url('../images/parchment.jpg');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	--Ntot: 12;
+	--Nfound: 0;
+}
+
+#ispy{
+	color: var(--black);
+	font-weight: normal;
+}
+
+/* add buttons for each object in the level.
+These will be positioned relative to the level image. */
+.location{
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+}
+
+#loc1{
+	/* position button */
+	position: absolute;
+	left:76.07692307692308%;
+	top:0.625%;
+	height:9.384615384615385%;
+	width:1.2307692307692308%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:pencil;
+	--sound1:sounds/pencil0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc1:focus { outline-style: none; }
+
+
+#pencil{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc2{
+	/* position button */
+	position: absolute;
+	left:84.07692307692308%;
+	top:55.75%;
+	height:8.461538461538462%;
+	width:1.4615384615384615%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:book;
+	--sound1:sounds/book0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc2:focus { outline-style: none; }
+
+
+#book{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc3{
+	/* position button */
+	position: absolute;
+	left:30.384615384615383%;
+	top:77.625%;
+	height:3.6153846153846154%;
+	width:1.5384615384615385%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:wine;
+	--sound1:sounds/wine0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc3:focus { outline-style: none; }
+
+
+#wine{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc4{
+	/* position button */
+	position: absolute;
+	left:14.615384615384615%;
+	top:18.5%;
+	height:2.6923076923076925%;
+	width:3.5384615384615383%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:snail;
+	--sound1:sounds/snail0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc4:focus { outline-style: none; }
+
+
+#snail{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc5{
+	/* position button */
+	position: absolute;
+	left:24.153846153846153%;
+	top:40.375%;
+	height:1.3076923076923077%;
+	width:3.4615384615384617%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:eyes;
+	--sound1:sounds/eyes0.mp3;
+	--sound2:sounds/eyes1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc5:focus { outline-style: none; }
+
+
+#loc6{
+	/* position button */
+	position: absolute;
+	left:7.461538461538462%;
+	top:60.25%;
+	height:1.2307692307692308%;
+	width:2.4615384615384617%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:eyes;
+	--sound1:sounds/eyes0.mp3;
+	--sound2:sounds/eyes1.mp3;
+	--number:2;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc6:focus { outline-style: none; }
+
+
+#eyes{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc6{
+	/* position button */
+	position: absolute;
+	left:50.0%;
+	top:25.875%;
+	height:1.7692307692307692%;
+	width:4.153846153846154%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:city;
+	--sound1:sounds/city0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc6:focus { outline-style: none; }
+
+
+#city{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc7{
+	/* position button */
+	position: absolute;
+	left:31.384615384615383%;
+	top:5.125%;
+	height:3.3076923076923075%;
+	width:5.6923076923076925%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:abode;
+	--sound1:sounds/abode0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc7:focus { outline-style: none; }
+
+
+#abode{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+#loc8{
+	/* position button */
+	position: absolute;
+	left:73.3076923076923%;
+	top:43.5%;
+	height:4.923076923076923%;
+	width:2.3846153846153846%;
+	/* color button */
+	border-radius: 100%;
+	border: none;
+	background-color: var(--locBtnColor);
+	/* object attributes */	--name:knight;
+	--sound1:sounds/knight0.mp3;
+	--number:1;
+	--found:0;
+	--color: var(--unfound);
+}
+#loc8:focus { outline-style: none; }
+
+
+#knight{
+	color: var(--black);
+	font-weight: normal;
+	--number:0;
+}
+
+
+.blankSpace{
+	position: relative;
+	left: 0;
+	top: 5vh;
+	height: 5vh;
+	width: 100vw;
+	background-color: none;
+	border: none;
+}
