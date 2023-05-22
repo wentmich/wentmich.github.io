@@ -213,10 +213,6 @@ h2 {
     max-width: 505px;    
 }
 
-.intro-img-1 {
-    margin-bottom: 20px;
-}
-
 .intro-circle-1 {
     left: -20px;
     top: -10px;
@@ -498,12 +494,17 @@ figure.effect-julia:hover p {
 
 .map-outer,
 .gmap-canvas {
-    height:200px;
+    height:auto;
     width:100%;
 }
 
 .tm-footer-right {
     text-align: right;
+}
+
+.loomis-img {
+    width:100%;
+    height:auto;
 }
 
 @media (min-width: 992px)
@@ -559,11 +560,11 @@ figure.effect-julia:hover p {
 
 @media (max-width: 834px) {
     .intro-left {
-        width: 65%;
+        width: 70%;
     }
 
     .intro-right {
-        width: 35%;
+        width: 30%;
     }
 }
 
@@ -579,7 +580,7 @@ figure.effect-julia:hover p {
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 500px) {
     .intro-left,
     .intro-right {
         width: 100%;
@@ -602,13 +603,18 @@ figure.effect-julia:hover p {
     }
 
     .intro-img-1 {
+        margin-bottom: 20px;
         margin-right: 4%;
-        margin-bottom: 0;
         width: 48%
     }
 
     .intro-img-2 {
         width: 48%;
+    }
+
+    .intro-img-3 {
+        width: 48%;
+        height: auto;
     }
 }
 
