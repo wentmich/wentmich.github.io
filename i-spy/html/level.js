@@ -41,7 +41,7 @@ function findObj(event){
     }
 
     // check for a win
-    if (parseInt(Nfound + 1) == Ntot){
+    if (parseInt(Nfound) == Ntot){
         var newAudio = new Audio('../sounds/victory.mp3');
         setTimeout(() => { newAudio.play(); }, 2000);
     }
